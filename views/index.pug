@@ -2,4 +2,27 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  .top
+    .add
+      input(type="text", name="item")
+      input(type="button", value="add")
+    .user
+      a admin
+  .mid
+    .item-list
+      p 1 x Eggs
+      p 2 x Milk
+      p 1 x Chicken Breast
+      p 3 x Apples
+    .menu
+      .tax
+        p TAX %
+        input(type="text", name="tax")
+      .discount
+        p DISCOUNT %
+        input(type="text", name="discount")
+      .total
+        input(type="button", value="CHECKOUT")
+        p TOTAL:
+        p $31.59
+

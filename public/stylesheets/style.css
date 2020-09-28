@@ -6,3 +6,30 @@ body {
 a {
   color: #00B7FF;
 }
+
+.top {
+  height: 40px;
+}
+
+.add {
+  float: left;
+}
+
+.user {
+  float: right;
+}
+
+.item-list {
+  float: left;
+  width: 80%;
+}
+
+.menu {
+  float: right;
+  width: 10%;
+  text-align: right;
+}
+
+.tax, .discount, .total {
+  height: 70px;
+}

@@ -1,28 +1,63 @@
-extends layout
-
-block content
-  h1= title
-  .top
-    .add
-      input(type="text", name="item")
-      input(type="button", value="add")
-    .user
-      a admin
-  .mid
-    .item-list
-      p 1 x Eggs
-      p 2 x Milk
-      p 1 x Chicken Breast
-      p 3 x Apples
-    .menu
-      .tax
-        p TAX %
-        input(type="text", name="tax")
-      .discount
-        p DISCOUNT %
-        input(type="text", name="discount")
-      .total
-        input(type="button", value="CHECKOUT")
-        p TOTAL:
-        p $31.59
-
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  meta(name='description' content='')
+  meta(name='author' content='')
+  title=title
+  // Bootstrap core CSS
+  link(href='/stylesheets/bootstrap.css' rel='stylesheet')
+// Navigation
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.static-top
+  .container
+    // a.navbar-brand(href='#') Start Bootstrap
+    .input-group
+      input.form-control(type='text' placeholder="Enter Item Name or UPC" aria-label="Recipient's username" aria-describedby='basic-addon2')
+      .input-group-append
+        button.btn.btn-outline-secondary(type='button') Add
+    button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarResponsive.collapse.navbar-collapse
+      ul.navbar-nav.ml-auto
+        li.nav-item.active
+          a.nav-link(href='' data-toggle='modal' data-target='#modalTaxRate') Tax Rate
+        li.nav-item.active
+          a.nav-link(href='' data-toggle='modal' data-target='#modalDiscount') Discount
+// Page Content
+.container
+  .row
+    .col-lg-12.text-center
+      h1.mt-5 A Bootstrap 4 Starter Template
+      p.lead Complete with pre-defined file paths and responsive navigation!
+      ul.list-unstyled
+        li Bootstrap 4.5.0
+        li jQuery 3.5.1
+      #modalTaxRate.modal.fade(tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true')
+        .modal-dialog(role='document')
+          .modal-content
+            .modal-header.text-center
+              h4.modal-title.w-100.font-weight-bold Change Tax %
+              button.close(type='button' data-dismiss='modal' aria-label='Close')
+                span(aria-hidden='true') &times;
+            .modal-body
+              .md-form
+                i.fas.fa-envelope.prefix.grey-text
+                input(type='text')
+            .modal-footer.d-flex.justify-content-center
+              button.btn.btn-default Apply
+      #modalDiscount.modal.fade(tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true')
+        .modal-dialog(role='document')
+          .modal-content
+            .modal-header.text-center
+              h4.modal-title.w-100.font-weight-bold Apply Discount %
+              button.close(type='button' data-dismiss='modal' aria-label='Close')
+                span(aria-hidden='true') &times;
+            .modal-body
+              .md-form
+                i.fas.fa-envelope.prefix.grey-text
+                input(type='text')
+            .modal-footer.d-flex.justify-content-center
+              button.btn.btn-default Apply
+// Bootstrap core JavaScript
+script(src='/javascripts/jquery.slim.js')
+script(src='/javascripts/bootstrap.bundle.js')

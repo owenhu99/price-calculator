@@ -31,7 +31,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.static-top
         table.ui.celled.table.center.aligned(id='myTable')
           tfoot(style='text-align:right')
             tr
-              td#total(colspan='6') Total $0.00
+              td#total(colspan='6') Discount -$0.00 &emsp; Tax $0.00 &emsp; <b>Total $0.00</b>
           thead
             tr
               th Item Name
@@ -50,9 +50,9 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.static-top
             .modal-body
               .md-form
                 i.fas.fa-envelope.prefix.grey-text
-                input(type='text')
+                input#tax(type='text')
             .modal-footer.d-flex.justify-content-center
-              button.btn.btn-default Apply
+              button.btn.btn-default#applyTax Apply
       #modalDiscount.modal.fade(tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true')
         .modal-dialog(role='document')
           .modal-content
@@ -63,9 +63,9 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.static-top
             .modal-body
               .md-form
                 i.fas.fa-envelope.prefix.grey-text
-                input(type='text')
+                input#discount(type='text')
             .modal-footer.d-flex.justify-content-center
-              button.btn.btn-default Apply
+              button.btn.btn-default#applyDiscount Apply
 // Bootstrap core JavaScript
 script(src='/javascripts/jquery.slim.js')
 script(src='/javascripts/bootstrap.bundle.js')

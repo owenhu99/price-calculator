@@ -12,9 +12,9 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.static-top
   .container
     // a.navbar-brand(href='#') Start Bootstrap
     .input-group
-      input.form-control(type='text' placeholder="Enter Item Name or UPC" aria-label="Recipient's username" aria-describedby='basic-addon2')
+      input.form-control(type='text' id='item' placeholder="Enter Item Name or UPC" aria-label="Recipient's username" aria-describedby='basic-addon2')
       .input-group-append
-        button.btn.btn-outline-secondary(type='button') Add
+        button.btn.btn-outline-secondary(type='button' id='addItem') Add
     button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation')
       span.navbar-toggler-icon
     #navbarResponsive.collapse.navbar-collapse
@@ -27,11 +27,17 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.static-top
 .container
   .row
     .col-lg-12.text-center
-      h1.mt-5 A Bootstrap 4 Starter Template
-      p.lead Complete with pre-defined file paths and responsive navigation!
-      ul.list-unstyled
-        li Bootstrap 4.5.0
-        li jQuery 3.5.1
+      .ui.container
+        table.ui.celled.table.center.aligned(id='myTable')
+          thead
+            tr
+              th Num.
+              th Item Name
+              th Quantity
+              th Unit Price
+              th Subtotal
+              th.text-right Remove
+          tbody
       #modalTaxRate.modal.fade(tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true')
         .modal-dialog(role='document')
           .modal-content
@@ -61,3 +67,4 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.static-top
 // Bootstrap core JavaScript
 script(src='/javascripts/jquery.slim.js')
 script(src='/javascripts/bootstrap.bundle.js')
+script(src='/javascripts/script.js')

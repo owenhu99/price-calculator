@@ -22,12 +22,12 @@ $('#myTable').on('click', 'button.close', function(e){
     $(nRow).remove();
     items.splice(nRow.rowIndex - 1, 1);
     $('#total').text("Total $" + getSum());
-})
+});
 
 function getSum() {
     var sum = 0;
     for (var i = 0; i < items.length; i++) {
         sum += items[i].quantity * items[i].price;
-    }
+    };
     return sum.toFixed(2);
 }

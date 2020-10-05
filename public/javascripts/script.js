@@ -1,11 +1,11 @@
 var items = [];
+
 const rowDelete = "<td class='text-right'><button type='button' class='close' aria-label='Close'><span aria-hidden='true'>&times;</span></button></td>";
 
 $('#addItem').click(function(){
     var str = $('#item').val();
     var num = items.length + 1;
     var dict = {
-        num: num,
         name: str,
         quantity: 1,
         price: 10
@@ -18,5 +18,7 @@ $('#addItem').click(function(){
 $('#myTable').on('click', 'button.close', function(e){
     e.preventDefault();
     var nRow = $(this).parents('tr')[0];
+    alert(nRow.rowIndex);
     $(nRow).remove();
 })
+

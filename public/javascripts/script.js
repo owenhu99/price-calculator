@@ -13,6 +13,7 @@ $('#addItem').click(function(){
     items.push(dict);
 
     $('#myTable tr:last').after("<tr><td>"+str+"</td><td>1</td><td>10</td><td>10</td>"+rowDelete+"</tr>");
+    $('#total').text("Total $" + getSum());
 });
 
 $('#myTable').on('click', 'button.close', function(e){
@@ -20,4 +21,13 @@ $('#myTable').on('click', 'button.close', function(e){
     var nRow = $(this).parents('tr')[0];
     $(nRow).remove();
     items.splice(nRow.rowIndex - 1, 1);
+    $('#total').text("Total $" + getSum());
 })
+
+function getSum() {
+    var sum = 0;
+    for (var i = 0; i < items.length; i++) {
+        sum += items[i].quantity * items[i].price;
+    }
+    return sum.toFixed(2);
+}

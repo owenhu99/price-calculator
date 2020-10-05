@@ -9,7 +9,7 @@ $('#addItem').click(function(){
         name: str,
         quantity: 1,
         price: 10
-    }
+    };
     items.push(dict);
 
     $('#myTable tr:last').after("<tr><td>"+num+"</td><td>"+str+"</td><td>1</td><td>10</td><td>10</td>"+rowDelete+"</tr>");
@@ -18,7 +18,7 @@ $('#addItem').click(function(){
 $('#myTable').on('click', 'button.close', function(e){
     e.preventDefault();
     var nRow = $(this).parents('tr')[0];
-    alert(nRow.rowIndex);
+    alert(items[nRow.rowIndex - 1].name);
     $(nRow).remove();
+    items.splice(nRow.rowIndex - 1, 1);
 })
-

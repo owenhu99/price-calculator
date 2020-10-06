@@ -18,7 +18,7 @@ $('#addItem').click(function(){
         url: '/search',
         type: 'POST',
         cache: false,
-        data: { value: $('#item').serialize() },
+        data: { value: str },
         dataType: 'json',
         success: function (data) {
             alert(data.test);

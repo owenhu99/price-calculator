@@ -14,6 +14,20 @@ $('#addItem').click(function(){
     };
     items.push(dict);
 
+    $.ajax({
+        url: '/search',
+        type: 'POST',
+        cache: false,
+        data: { value: $('#item').serialize() },
+        dataType: 'json',
+        success: function (data) {
+            alert(data.test);
+        },
+        error: function (jqXHR, textStatus, err) {
+            alert('text status ' + textStatus + ', err ' + err);
+        }
+    });
+
     $('#myTable tr:last').after("<tr><td>"+str+"</td><td>1</td><td>10</td><td>10</td>"+rowDelete+"</tr>");
     var sum = getSum();
     $('#total').html("Discount -$"+ sum[0] +" &emsp; Tax $"+sum[1]+" &emsp; <b>Total $"+sum[2]+"</b>");

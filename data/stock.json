@@ -1,0 +1,67 @@
+{
+    "1": {
+        "upc": 100001,
+        "name": "Salted butter",
+        "price": 2.99
+    },
+    "2": {
+        "upc": 100002,
+        "name": "Whole white mushrooms",
+        "price": 1.69
+    },
+    "3": {
+        "upc": 100003,
+        "name": "Apple, Honeycrisp",
+        "price": 0.60
+    },
+    "4": {
+        "upc": 100004,
+        "name": "Soft white sliced bread",
+        "price": 2.99
+    },
+    "5": {
+        "upc": 100005,
+        "name": "Asparagus, bunch",
+        "price": 2.11
+    },
+    "6": {
+        "upc": 100006,
+        "name": "Stuffed turkey",
+        "price": 22.84
+    },
+    "7": {
+        "upc": 100007,
+        "name": "Dark maple syrup",
+        "price": 6.99
+    },
+    "8": {
+        "upc": 100008,
+        "name": "Fresh Atlantic Salmon Portion",
+        "price": 3.99
+    },
+    "9": {
+        "upc": 100008,
+        "name": "Organic banana",
+        "price": 0.41
+    },
+    "10": {
+        "upc": 100008,
+        "name": "Large eggs, 12 un.",
+        "price": 2.89
+    },
+    "11": {
+        "upc": 100008,
+        "name": "Orange Juice Without Pulp, Premium",
+        "price": 5.49
+    },
+    "12": {
+        "upc": 100008,
+        "name": "Instant coffee, Rich",
+        "price": 7.99
+    },
+    "13": {
+        "upc": 100008,
+        "name": "Roasted salted pistachios",
+        "price": 5.99
+    }
+}

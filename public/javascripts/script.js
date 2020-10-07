@@ -6,6 +6,7 @@ const rowDelete = "<td class='text-right'><button type='button' class='close' ar
 
 $('#addItem').click(function(){
     var upc = $('#item').val();
+    $('#item').val('');
 
     $.ajax({
         url: '/search',

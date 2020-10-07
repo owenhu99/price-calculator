@@ -28,15 +28,15 @@ $('#addItem').click(function(){
 $('#myTable').on('click', 'button.close', function(e){
     e.preventDefault();
     var nRow = $(this).parents('tr')[0];
-    var remaining = deleteItem($(nRow).attr('id'));
-    if (remaining == -1) {
+    var item = deleteItem($(nRow).attr('id'));
+    if (item == -1) {
         alert("Could not find item with corresponding UPC. Please report to admin.");
-    } else if (remaining == 0) {
+    } else if (item == null) {
         console.log("remove from table");
         $(nRow).remove();
     } else {
         console.log("subtract from table");
-        $(nRow).find('.quantity').text(remaining);
+        $(nRow).html(returnItemLine(item, item.quantity));
     }
     console.log(items);
     updateSum();
@@ -69,8 +69,8 @@ $('#applyDiscount').click(function(){
 function deleteItem(id) {
     /**
      * Returns:
-     * 0 to remove item from items
-     * >=1 to subtract item quantity by 1
+     * null after removing item from items
+     * updated item dict after subtracting item quantity by 1
      * -1 for error (item not found)
      */
     var upc = parseInt(id.substring(1));
@@ -78,10 +78,10 @@ function deleteItem(id) {
         if (items[i].upc == upc) {
             if (items[i].quantity == 1) {
                 items.splice(i, 1);
-                return(0);
+                return(null);
             } else if (items[i].quantity > 1) {
                 items[i].quantity--;
-                return(items[i].quantity);
+                return(items[i]);
             }
         }
     }
@@ -133,11 +133,11 @@ function onSuccess (result) {
 function returnItemLine (data, numToAdd) {
     /** Return appropriate html string to update item */
     if (numToAdd) {
-        return("<td>"+data.upc+"</td><td>"+data.name+"</td><td class='quantity'>"+numToAdd+"</td><td>"+data.price+"</td><td>"
-            +(data.price * numToAdd).toFixed(2)+"</td>"+rowDelete);
+        return("<td>"+data.upc+"</td><td>"+data.name+"</td><td class='quantity'>"+numToAdd+"</td><td>"
+            +data.price+"</td><td class='totalPrice'>"+(data.price * numToAdd).toFixed(2)+"</td>"+rowDelete);
     } else {
-        return("<tr id='u"+data.upc+"'><td>"+data.upc+"</td><td>"+data.name+"</td><td class='quantity'>1</td><td>"+data.price+"</td><td>"
-            +data.price+"</td>"+rowDelete+"</tr>");
+        return("<tr id='u"+data.upc+"'><td>"+data.upc+"</td><td>"+data.name+"</td><td class='quantity'>1</td><td>"
+            +data.price+"</td><td class='totalPrice'>"+data.price+"</td>"+rowDelete+"</tr>");
     }
 }
 

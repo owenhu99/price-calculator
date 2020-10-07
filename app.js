@@ -4,9 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require("body-parser");
-
-//var indexRouter = require('./routes/index');
-//var usersRouter = require('./routes/users');
+var stock = require("./data/stock.json");
 
 var app = express();
 
@@ -30,12 +28,19 @@ app.get('/', function(req, res, next) {
 
 app.post('/search', function(req, res){
     console.log("we're here at least...")
-    console.log(req.body);
-    if (req.body.value == 'test') {
-        res.json({test: "success"});
-    } else {
-        res.json({test: "failure"});
+    console.log(req.body.value);
+    var found = false;
+
+    for (item in stock) {
+        console.log(stock[item].upc);
+        if (stock[item].upc == req.body.value) {
+            console.log("found");
+            found = true;
+            res.json({found: 1, upc: stock[item].upc, name: stock[item].name, price: stock[item].price});
+            break;
+        }
     }
+    if (!found) res.json({found: 0, name: "", price: 0});
  });
 
 // catch 404 and forward to error handler

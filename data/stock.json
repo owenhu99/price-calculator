@@ -40,27 +40,27 @@
         "price": 3.99
     },
     "9": {
-        "upc": 100008,
+        "upc": 100009,
         "name": "Organic banana",
         "price": 0.41
     },
     "10": {
-        "upc": 100008,
+        "upc": 100010,
         "name": "Large eggs, 12 un.",
         "price": 2.89
     },
     "11": {
-        "upc": 100008,
+        "upc": 100011,
         "name": "Orange Juice Without Pulp, Premium",
         "price": 5.49
     },
     "12": {
-        "upc": 100008,
+        "upc": 100012,
         "name": "Instant coffee, Rich",
         "price": 7.99
     },
     "13": {
-        "upc": 100008,
+        "upc": 100013,
         "name": "Roasted salted pistachios",
         "price": 5.99
     }

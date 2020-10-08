@@ -4,7 +4,8 @@
  * Module dependencies.
  */
 
-var app = require('../app');
+var module = require('../app');
+var app = module.app;
 var debug = require('debug')('csc301-a1:server');
 var http = require('http');
 

@@ -27,20 +27,16 @@ app.get('/', function(req, res, next) {
 });
 
 app.post('/search', function(req, res){
-    console.log("we're here at least...")
-    console.log(req.body.value);
     var found = false;
 
     for (item in stock) {
-        console.log(stock[item].upc);
         if (stock[item].upc == req.body.value) {
-            console.log("found");
             found = true;
             res.json({found: 1, upc: stock[item].upc, name: stock[item].name, price: stock[item].price});
             break;
         }
     }
-    if (!found) res.json({found: 0, name: "", price: 0});
+    if (!found) res.json({found: 0, upc: 0, name: "", price: 0});
  });
 
 // catch 404 and forward to error handler
@@ -59,8 +55,11 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(3000, () => {
+var server = app.listen(3000, () => {
     console.log("Started on PORT 3000");
 });
 
-module.exports = app;
+module.exports = {
+    app: app, 
+    server: server
+};

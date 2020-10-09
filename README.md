@@ -68,6 +68,12 @@ You can also change the tax rate which is 13% by default and the discount rate w
 
 Clicking them will bring up a pop-up window that is rendered with the Bootstrap class 'modal'. You can type in the a new percentage number and submit. This will store the new rates inside `script.js` and automatically update the new price total. 
 
+### Testing
+
+Unit testing is set up with mocha and chai and I used supertest to simulate server requests. Tests are included in the `test` folder and reflects the folder structure of the corresponding files to be tested.
+
+Current tests will test server behavior when hit with different requests. They can be found in `test/app-test.js` and each test is pretty self-explanatory (described by their name, for example "POST /search responds with json").
+
 ## Report
 
 Here is the report of the decisions made before and during the development of this application.

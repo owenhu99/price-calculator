@@ -10,9 +10,11 @@ This is the web-app part of assignment 1 of CSC301 - assignment pair 90.
 
 2. Install the package's dependencies with `npm ci`
 
-3. Start the app with `npm start`
+3. Set the server port number with `npm config set csc301-a1-web:myPort [port-number]` (default is 3000)
 
-4. Access the web page at http://localhost:3000
+4. Start the app with `npm start`
+
+5. Access the web page at http://localhost:3000 or the custom port number
 
 ## Usage
 

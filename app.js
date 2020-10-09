@@ -8,6 +8,8 @@ var stock = require("./data/stock.json");
 
 var app = express();
 
+var port = process.env.npm_package_config_myPort || 3000;
+
 // body-parser middleware setup
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -55,8 +57,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-var server = app.listen(3000, () => {
-    console.log("Started on PORT 3000");
+var server = app.listen(port, () => {
+    console.log("Started on PORT " + port);
 });
 
 module.exports = {

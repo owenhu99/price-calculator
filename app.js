@@ -1,3 +1,12 @@
+/**
+ * Citation:
+ * 
+ * The basic framework of the express app with the error handling and library imports were taken 
+ * from a combination of expressjs documentations and stackoverflow answers. I tried to find 
+ * specific sources but I don't think I copied big chunks of code so I wan't able to locate any.
+ * 
+ */
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');

@@ -1,6 +1,6 @@
 # csc301-a1-web
 
-This is the web-app part of assignment 1 of CSC301 - assignment pair 90.
+This is the web-app part of assignment 1 of CSC301 - Introduction to Software Engineering.
 
 ## Getting Started
 
